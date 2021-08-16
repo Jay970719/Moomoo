@@ -98,19 +98,20 @@
     </div>
     <div class="mainbody">
         <div class="card">
+          <form action="login.php" method="POST">
             <span class="name">Log In</span>
             <div class="cardinside">
-                <p>Email Address <br /> <input type="email" id="email"><br /></p>
-                <p>Password <br /> <input type="password" id="password"><br /></p>
+                <p>Email Address <br /> <input type="email" id="email" name="email"><br /></p>
+                <p>Password <br /> <input type="password" id="password" name="password"><br /></p>
                 <div class="buttons">
-                    <form action="">
-                        <input type="submit" id="submit"></form>&nbsp;&nbsp;
+                    <input type="submit" id="submit" value="Log in">&nbsp;&nbsp;
                     <a href="~"><input type="button" id="forgetpassword" value="Forget Password?"></a>
                 </div>
                 <hr style="width: 60%;" />
                 <h5>Don't you have your account? <a href="SignUp.html">Sign Up</a></h5>
                 <h5>Admin? <a href="backstore/order-list.html">Go to Backstore</a></h5>
             </div>
+          </form>  
         </div>
 
         <div class="Footer">
