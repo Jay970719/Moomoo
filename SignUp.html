@@ -192,9 +192,11 @@
                         <input type="radio" name="paymentmethod" value="debit" checked>Debit
                         <input type="radio" name="paymentmethod" value="credit">Credit
                         <input type="radio" name="paymentmethod" value="moomoocard">Moomoo card</p>
-                    <p>*CARD NUMBER(without space)<br /> <input type="text" id=" cardnumber"
-                            placeholder="**** **** **** ****" name="cardnumber"></p>
-                    <p>*CVC NUMBER(3 Digits) <br /> <input type="password" id="cvc" style="width: 15px;" placeholder="***" name="cvc">
+                    <p>*CARD NUMBER(without space)<br /> <input type="text" id="cardnumber"
+                            placeholder="**** **** **** ****" name="cardnumber" onchange="cardcheck()"><br/>
+                            <span id="cardmessage" style="color:red; display:none;">Wrong card number format.</span></p>
+                    <p>*CVC NUMBER(3 Digits) <br /> <input type="password" id="cvc" style="width: 15px;" placeholder="***" name="cvc" onchange="cvccheck()"><br/>
+                        <span id="cvcmessage" style="color:red; display:none;">Wrong cvc format.</span>
                     </p>
                 </div>
             </div>
@@ -218,11 +220,12 @@
                 </div>
             </div>
         </div>
-        <p class="consent">Consent to Conditions of Use and protection of Personal Information Policy
-            <br /><input type="checkbox">*Yes, I have read and accept the Conditions of Use and protection of Personal
+        <p class="consent" onmousemove="consentcheck()">Consent to Conditions of Use and protection of Personal Information Policy
+            <br /><input type="checkbox" id="consentbox" >*Yes, I have read and accept the Conditions of Use and protection of Personal
             Information Policy
-        </p>
+        </p> <span id="consentboxmessage" style="color:red; display:none; margin-left: 40px"> Please check the box to submit.</span>
         <br />
+       
         <hr />
         <div class="button">
            <input type="submit" value="Create Account" class="submit" name="submit">

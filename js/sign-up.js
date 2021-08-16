@@ -42,3 +42,43 @@ function passwordcheck(){
         message.style.display= "none";
     }
 }
+
+function cardcheck(){
+    var cardnumber = document.getElementById("cardnumber").value;
+    var message = document.getElementById("cardmessage");
+    if(!/^\d{16}$/.test(cardnumber) )
+    { 
+      message.style.display = "block";
+      document.getElementById("cardnumber").focus();
+      document.getElementById("cardnumber").select();
+    }
+    else{
+        message.style.display= "none";
+    }
+}
+
+function cvccheck(){
+    var cvc = document.getElementById("cvc").value;
+    var message = document.getElementById("cvcmessage");
+    if(!/^\d{3}$/.test(cvc) )
+    { 
+      message.style.display = "block";
+      document.getElementById("cvc").focus();
+      document.getElementById("cvc").select();
+    }
+    else{
+        message.style.display= "none";
+    }
+}
+
+function consentcheck(){
+    var consent = document.getElementById("consentbox").checked;
+    var message = document.getElementById("consentboxmessage");
+    if(consent!=true )
+    { 
+      message.style.display = "block";
+    }
+    else{
+        message.style.display= "none";
+    }
+}
